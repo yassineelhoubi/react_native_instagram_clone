@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
   },
   icon: {
     width: 30,
-    height: 30,
+    height: 25,
     marginLeft: 10,
     resizeMode: 'contain'
   },
   logo: {
     width: 100,
-    height: 50,
+    height: 70,
     resizeMode: 'contain',
   },
   unreadBadge: {
