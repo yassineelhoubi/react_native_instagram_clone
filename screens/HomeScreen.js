@@ -1,6 +1,6 @@
 import { View, StyleSheet, Text, SafeAreaView, StatusBar } from 'react-native'
 import React from 'react'
-import {Header} from '../components/home/Header'
+import { Header } from '../components/home/Header'
 
 const HomeScreen = () => {
     return (
