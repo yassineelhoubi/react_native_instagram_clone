@@ -5,7 +5,7 @@ const users = [
         // isOnline: true,
     },
     {
-        user: "yassinelhb",
+        user: "yamashsimi",
         image: "https://randomuser.me/api/portraits/med/men/12.jpg",
         // isOnline: true,
     },
@@ -15,12 +15,12 @@ const users = [
         // isOnline: true,
     },
     {
-        user: "imadzouwag",
+        user: "silvester",
         image: "https://randomuser.me/api/portraits/med/men/23.jpg",
         // isOnline: false,
     },
     {
-        user: "ilhamwinka",
+        user: "ananamakoki",
         image: "https://randomuser.me/api/portraits/med/women/22.jpg",
         // isOnline: true
     },
