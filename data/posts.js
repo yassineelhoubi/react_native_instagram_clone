@@ -21,7 +21,7 @@ export const posts = [
         ],
     },
     {
-        image: "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
+        imageUrl: "https://images.unsplash.com/photo-1461988320302-91bde64fc8e4?ixid=2yJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
         user: users[1].user,
         profile_picture: users[1].image,
         caption: "Nice view!",
@@ -39,7 +39,7 @@ export const posts = [
         ],
     },
     {
-        image: "https://images.unsplash.com/1/type-away.jpg?q=80&fm=jpg",
+        imageUrl: "https://images.unsplash.com/1/type-away.jpg?q=80&fm=jpg",
         user: users[3].user,
         profile_picture: users[3].image,
         caption: "codding is fun, right?",

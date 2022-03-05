@@ -4,9 +4,10 @@ import { Divider } from 'react-native-elements'
 
 const Post = ({ post }) => {
     return (
-        <View>
+        <View style={styles.postContainer}>
             <Divider width={1} orientation='vertical' />
             <PostHeader post={post} />
+            <PostImage post={post} />
         </View>
     )
 }
@@ -21,7 +22,17 @@ const PostHeader = ({ post }) => (
     </View>
 )
 
+const PostImage = ({ post }) => (
+    <View style={styles.postImageContainer}>
+        <Image source={{ uri: post.imageUrl }} style={styles.postImage} />
+    </View>
+)
+
 const styles = StyleSheet.create({
+    postContainer: {
+        marginBottom: 30
+    },
+    /* PostHeader */
     postHeader: {
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -45,6 +56,16 @@ const styles = StyleSheet.create({
         borderWidth: 1.6,
         borderColor: "#ff8501"
     },
+    /* PostImage */
+    postImageContainer: {
+        width: "100%",
+        height: 450
+    },
+    postImage: {
+        height: '100%',
+        resizeMode: 'cover'
+    }
+
 })
 
 export { Post }
