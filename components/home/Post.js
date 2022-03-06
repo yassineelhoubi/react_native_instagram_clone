@@ -1,13 +1,33 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Divider } from 'react-native-elements'
-
+const postFooterIcons = [
+    {
+        name: 'like',
+        img: require('../../assets/heart.png')
+    },
+    {
+        name: 'comment',
+        img: require('../../assets/comment.png')
+    },
+    {
+        name: 'share',
+        img: require('../../assets/send.png')
+    },
+    {
+        name: 'save',
+        img: require('../../assets/save.png')
+    }
+]
 const Post = ({ post }) => {
     return (
         <View style={styles.postContainer}>
             <Divider width={1} orientation='vertical' />
             <PostHeader post={post} />
             <PostImage post={post} />
+            <View style={styles.postFooterContainer}>
+                <PostFooter />
+            </View>
         </View>
     )
 }
@@ -26,6 +46,25 @@ const PostImage = ({ post }) => (
     <View style={styles.postImageContainer}>
         <Image source={{ uri: post.imageUrl }} style={styles.postImage} />
     </View>
+)
+
+const PostFooter = () => (
+    <View style={styles.footerIconContainer}>
+        <View style={styles.subFooterIconContainer}>
+            <Icon imgStyle={styles.footerIcon} img={postFooterIcons[0].img} />
+            <Icon imgStyle={styles.footerIcon} img={postFooterIcons[1].img} />
+            <Icon imgStyle={styles.footerIcon} img={postFooterIcons[2].img} />
+        </View>
+        <View style={styles.subFooterSaveIcon}>
+            <Icon imgStyle={styles.footerIcon} img={postFooterIcons[3].img} />
+        </View>
+    </View>
+)
+
+const Icon = ({ imgStyle, img }) => (
+    <TouchableOpacity>
+        <Image style={imgStyle} source={img} />
+    </TouchableOpacity>
 )
 
 const styles = StyleSheet.create({
@@ -64,6 +103,27 @@ const styles = StyleSheet.create({
     postImage: {
         height: '100%',
         resizeMode: 'cover'
+    },
+    postFooterContainer: {
+        marginHorizontal: 15,
+        marginTop: 10
+    },
+    footerIcon: {
+        width: 20,
+        height: 20,
+        resizeMode: 'contain',
+    },
+    footerIconContainer: {
+        flexDirection: 'row',
+    },
+    subFooterIconContainer: {
+        flexDirection: 'row',
+        width: '28%',
+        justifyContent: "space-between"
+    },
+    subFooterSaveIcon: {
+        flex: 1,
+        alignItems: "flex-end"
     }
 
 })
