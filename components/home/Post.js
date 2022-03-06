@@ -27,10 +27,19 @@ const Post = ({ post }) => {
             <PostImage post={post} />
             <View style={styles.postFooterContainer}>
                 <PostFooter />
+                <Likes post={post} />
             </View>
         </View>
     )
 }
+
+const Likes = ({ post }) => (
+    <View style={{ flexDirection: 'row', marginTop: 4 }}>
+        <Text style={{ color: 'white', fontWeight: '600' }}>
+            {post.likes.toLocaleString('en')} likes
+        </Text>
+    </View>
+)
 
 const PostHeader = ({ post }) => (
     <View style={styles.postHeader}>
