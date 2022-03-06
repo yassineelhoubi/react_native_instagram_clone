@@ -28,6 +28,7 @@ const Post = ({ post }) => {
             <View style={styles.postFooterContainer}>
                 <PostFooter />
                 <Likes post={post} />
+                <Caption post={post} />
             </View>
         </View>
     )
@@ -38,6 +39,16 @@ const Likes = ({ post }) => (
         <Text style={{ color: 'white', fontWeight: '600' }}>
             {post.likes.toLocaleString('en')} likes
         </Text>
+    </View>
+)
+
+const Caption = ({ post }) => (
+    <View> 
+        <Text style={{ color: 'white' }}>
+            <Text style={{ fontWeight: "bold" }}>{post.user}</Text>
+            <Text> {post.caption}</Text>
+        </Text> 
+
     </View>
 )
 

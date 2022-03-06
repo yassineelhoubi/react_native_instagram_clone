@@ -6,7 +6,7 @@ export const posts = [
             "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
         user: users[0].user,
         profile_picture: users[0].image,
-        caption: "Nice view!",
+        caption: "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
         hasLiked: true,
         likes: 12,
         comments: [
@@ -42,7 +42,7 @@ export const posts = [
         imageUrl: "https://images.unsplash.com/1/type-away.jpg?q=80&fm=jpg",
         user: users[3].user,
         profile_picture: users[3].image,
-        caption: "codding is fun, right?",
+        caption: "codding is fun, right? codding is fun, right? codding is fun, right?",
         hasLiked: false,
         likes: 12,
         comments: [
