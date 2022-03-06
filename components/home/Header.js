@@ -14,13 +14,13 @@ const Header = () => {
           <Image style={styles.icon} source={require('../../assets/plus_logo.png')} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image style={styles.icon} source={require('../../assets/like_logo.png')} />
+          <Image style={styles.icon} source={require('../../assets/heart.png')} />
         </TouchableOpacity>
         <TouchableOpacity>
           <View style={styles.unreadBadge}>
             <Text style={styles.unreadBadgeText}>11</Text>
           </View>
-          <Image style={styles.icon} source={require('../../assets/sent_logo.png')} />
+          <Image style={styles.icon} source={require('../../assets/send.png')} />
         </TouchableOpacity>
       </View>
     </View>
@@ -35,10 +35,12 @@ const styles = StyleSheet.create({
   },
   iconsContainer: {
     flexDirection: 'row',
+    width: '33%',
+    justifyContent: 'space-between',
   },
   icon: {
-    width: 30,
-    height: 25,
+    width: 23,
+    height: 20,
     marginLeft: 10,
     resizeMode: 'contain'
   },
@@ -50,10 +52,10 @@ const styles = StyleSheet.create({
   unreadBadge: {
     backgroundColor: '#FF3250',
     position: 'absolute',
-    left: 25,
-    bottom: 18,
-    width: 18,
-    height: 18,
+    left: 20,
+    bottom: 14,
+    width: 16,
+    height: 16,
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
@@ -61,8 +63,8 @@ const styles = StyleSheet.create({
   },
   unreadBadgeText: {
     color: 'white',
-    fontWeight: '600',
-    fontSize: 11
+    fontWeight: '800',
+    fontSize: 10
   }
 })
 export { Header }
