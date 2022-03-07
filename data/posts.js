@@ -28,14 +28,7 @@ export const posts = [
         hasLiked: false,
         likes: 12,
         comments: [
-            {
-                user: users[0].user,
-                text: "Nice post mate!",
-            },
-            {
-                user: users[2].user,
-                text: "I like your post",
-            },
+ 
         ],
     },
     {
