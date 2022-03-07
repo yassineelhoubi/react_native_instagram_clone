@@ -8,15 +8,15 @@ export const posts = [
         profile_picture: users[0].image,
         caption: "Reference site about Lorem Ipsum, giving information on its origins, as well as a random Lipsum generator.",
         hasLiked: true,
-        likes: 12,
+        likes: 1200,
         comments: [
             {
                 user: users[1].user,
-                text: "Nice post mate!",
+                comment: "Nice post mate!",
             },
             {
                 user: users[2].user,
-                text: "I like your post",
+                comment: "I like your post",
             },
         ],
     },
@@ -41,11 +41,11 @@ export const posts = [
         comments: [
             {
                 user: users[4].user,
-                text: "Yeah I like that",
+                comment: "Yeah I like that",
             },
             {
                 user: users[2].user,
-                text: "of course, I do",
+                comment: "of course, I do",
             },
         ],
     },

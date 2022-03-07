@@ -30,6 +30,7 @@ const Post = ({ post }) => {
                 <Likes post={post} />
                 <Caption post={post} />
                 <CommentSections post={post} />
+                <Comments post={post} />
             </View>
         </View>
     )
@@ -38,7 +39,7 @@ const Post = ({ post }) => {
 const Likes = ({ post }) => (
     <View style={{ flexDirection: 'row', marginTop: 4 }}>
         <Text style={{ color: 'white', fontWeight: '600' }}>
-            {post.likes.toLocaleString('en')} likes
+            {post.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} likes
         </Text>
     </View>
 )
@@ -61,6 +62,21 @@ const CommentSections = ({ post }) => (
             </Text>
         )}
     </View>
+)
+
+const Comments = ({ post }) => (
+    <>
+        {post.comments.map((comment, index) => (
+            <View key={index} style={{flexDirection: "row", marginTop: 2}}>
+                <Text style={{ color: "white" }}>
+                    <Text style={{ fontWeight: "bold" }}>
+                        {comment.user}
+                    </Text >
+                    <Text style={{ fontSize: 12 }}>{' ' + comment.comment}</Text>
+                </Text>
+            </View>
+        ))}
+    </>
 )
 
 const PostHeader = ({ post }) => (
