@@ -1,1 +1,1 @@
-export { Header, Stories, Post } from "./home"
+export { Header, Stories, Post, BottomTabs, bottomTabIcons } from "./home"

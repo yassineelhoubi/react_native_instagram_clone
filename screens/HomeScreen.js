@@ -1,8 +1,9 @@
 import { View, StyleSheet, Text, SafeAreaView, StatusBar } from 'react-native'
 import React from 'react'
-import { Header, Post, Stories } from '../components'
+import { Header, Post, Stories, BottomTabs, bottomTabIcons } from '../components'
 import { ScrollView } from 'react-native'
-import { posts } from '../data/posts'
+import { posts } from '../data'
+
 
 const HomeScreen = () => {
     return (
@@ -14,6 +15,7 @@ const HomeScreen = () => {
                     <Post post={post} key={index} />
                 ))}
             </ScrollView>
+            <BottomTabs icons={bottomTabIcons} />
         </SafeAreaView>
     )
 }
