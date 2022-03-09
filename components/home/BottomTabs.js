@@ -1,4 +1,4 @@
-import { StyleSheet, View, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, View, TouchableOpacity,Platform , Image } from 'react-native'
 import { useState } from 'react'
 import { Divider } from 'react-native-elements'
 
@@ -33,7 +33,8 @@ const styles = StyleSheet.create({
         width: '100%',
         bottom: '0%',
         zIndex: 999,
-        backgroundColor: '#000'
+        backgroundColor: '#000',
+        paddingBottom :Platform.OS === "ios" ? 30 : 0
     },
     container: {
         flexDirection: 'row',
