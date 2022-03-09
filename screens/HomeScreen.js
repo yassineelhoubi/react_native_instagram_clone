@@ -1,7 +1,6 @@
-import { View, StyleSheet, Text, SafeAreaView, StatusBar } from 'react-native'
+import { StyleSheet, SafeAreaView, StatusBar, ScrollView } from 'react-native'
 import React from 'react'
 import { Header, Post, Stories, BottomTabs, bottomTabIcons } from '../components'
-import { ScrollView } from 'react-native'
 import { posts } from '../data'
 
 
