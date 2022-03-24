@@ -1,10 +1,10 @@
 import { StyleSheet, TouchableOpacity, Image, View, Text } from 'react-native'
 import React from 'react'
 
-const HeaderNewPost = () => {
+const HeaderNewPost = ({ navigation }) => {
     return (
         <View style={styles.container} >
-            <TouchableOpacity >
+            <TouchableOpacity onPress={() => navigation.goBack()} >
                 <Image style={{ width: 30, height: 30 }}
                     source={require('../../assets/back.png')} />
             </TouchableOpacity>

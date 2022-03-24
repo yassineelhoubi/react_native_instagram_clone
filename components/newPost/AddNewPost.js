@@ -3,11 +3,11 @@ import React from 'react'
 import { HeaderNewPost } from './HeaderNewPost'
 import FormikPostUploader from './FormikPostUploader'
 
-const AddNewPost = () => {
+const AddNewPost = ({ navigation }) => {
     return (
         <View style={styles.container} >
-            <HeaderNewPost />
-            <FormikPostUploader /> 
+            <HeaderNewPost navigation={navigation} />
+            <FormikPostUploader />
         </View>
     )
 }
