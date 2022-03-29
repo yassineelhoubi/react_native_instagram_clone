@@ -3,7 +3,7 @@ import { useState } from 'react'
 import * as Yup from 'yup'
 import { Formik, Field } from 'formik'
 import { Button, Divider } from 'react-native-elements';
-
+import validUrl from 'valid-url'
 const PLACEHOLDER_IMG = 'https://wtwp.com/wp-content/uploads/2015/06/placeholder-image.png';
 
 const uploaderPostSchema = Yup.object().shape({
@@ -37,7 +37,7 @@ const FormikPostUploader = () => {
                         }}
                     >
                         <Image style={{ width: 100, height: 100 }}
-                            source={{ uri: thumbnailUrl ? thumbnailUrl : PLACEHOLDER_IMG }}
+                            source={{ uri: validUrl.isUri(thumbnailUrl) ? thumbnailUrl : PLACEHOLDER_IMG }}
                         />
                         <View style={{ flex: 1, marginLeft: 12 }}>
 
