@@ -7,7 +7,7 @@ import Validator from 'email-validator';
 const LoginForm = () => {
     const LoginFormSchema = Yup.object().shape({
         email: Yup.string().email().required('Email is required'),
-        password: Yup.string().required().min(6, 'Password must be at least 6 characters')
+        password: Yup.string().required('Password is required').min(6, 'Password must be at least 6 characters')
     })
     return (
         <View style={styles.wrapper}>
@@ -17,10 +17,16 @@ const LoginForm = () => {
                 validationSchema={LoginFormSchema}
                 validateOnMount={true}
             >
-                {({ handleChange, handleBlur, values, errors, isValid, handleSubmit }) => (
+                {({ handleChange, handleBlur, values, errors, isValid, handleSubmit, touched }) => (
                     <>
-
-                        <View style={styles.inputField}>
+                        <View style={[styles.inputField,
+                        {
+                            borderColor:
+                                values.email.length < 1 || Validator.validate(values.email)
+                                    ? '#ccc'
+                                    : 'red'
+                        }
+                        ]}>
                             <TextInput
                                 placeholderTextColor='#444'
                                 placeholder='Phone number, username or email'
@@ -34,7 +40,15 @@ const LoginForm = () => {
                             />
 
                         </View>
-                        <View style={styles.inputField}>
+                        {touched.email && errors.email ? <Text style={{ color: "red", marginLeft: 5, marginBottom: 5 }}>{errors.email}</Text> : null}
+                        <View style={[styles.inputField,
+                        {
+                            borderColor:
+                                1 > values.password.length || values.password.length >= 6
+                                    ? '#ccc'
+                                    : 'red'
+                        }
+                        ]}>
                             <TextInput
                                 placeholderTextColor='#444'
                                 placeholder='Password'
@@ -48,6 +62,7 @@ const LoginForm = () => {
                             />
 
                         </View>
+                        {touched.password && errors.password ? <Text style={{ color: "red", marginLeft: 5, marginBottom: 5 }}>{errors.password}</Text> : null}
                         <View style={{ alignItems: 'flex-end', marginBottom: 30 }}>
                             <Text style={{ color: "#6BB0F5" }}>Forgot password?</Text>
                         </View>
@@ -73,7 +88,7 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export { LoginForm }
 
 const styles = StyleSheet.create({
     wrapper: {

@@ -7,3 +7,5 @@ export {
 } from "./home"
 
 export { AddNewPost } from './newPost'
+
+export { LoginForm } from './loginScreen'

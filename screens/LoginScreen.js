@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
-import LoginForm from '../components/loginScreen/LoginForm'
+import { LoginForm } from '../components'
 
 const INSTAGRAM_LOGO = 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png'
 const LoginScreen = () => (
