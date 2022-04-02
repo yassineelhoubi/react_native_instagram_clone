@@ -1,6 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import { HomeScreen, NewPostScreen, LoginScreen } from './screens'
+import {
+    HomeScreen,
+    NewPostScreen,
+    LoginScreen,
+    SignUpScreen
+} from './screens'
+
 
 
 const Stack = createStackNavigator()
@@ -13,12 +19,13 @@ const SingedInStack = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='LoginScreen'
+                initialRouteName='SignUpScreen'
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen name='HomeScreen' component={HomeScreen} />
                 <Stack.Screen name='NewPostScreen' component={NewPostScreen} />
                 <Stack.Screen name='LoginScreen' component={LoginScreen} />
+                <Stack.Screen name='SignUpScreen' component={SignUpScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     )
