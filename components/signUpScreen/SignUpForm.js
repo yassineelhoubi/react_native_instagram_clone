@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Validator from 'email-validator';
 
-const SignUpForm = () => {
+const SignUpForm = ({ navigation }) => {
     const LoginFormSchema = Yup.object().shape({
         userName: Yup.string().required('User name is required').min(4, 'User name must be at least 4 characters'),
         email: Yup.string().email().required('Email is required'),
@@ -83,9 +83,7 @@ const SignUpForm = () => {
 
                         </View>
                         {touched.password && errors.password ? <Text style={{ color: "red", marginLeft: 5, marginBottom: 5 }}>{errors.password}</Text> : null}
-                        <View style={{ alignItems: 'flex-end', marginBottom: 30 }}>
-                            <Text style={{ color: "#6BB0F5" }}>Forgot password?</Text>
-                        </View>
+
                         <Pressable
                             titleSize={20}
                             style={styles.button(isValid)}
@@ -96,9 +94,9 @@ const SignUpForm = () => {
                         </Pressable>
 
                         <View style={styles.signupContainer}>
-                            <Text style={styles.signupText}>Don't have an account?</Text>
-                            <TouchableOpacity>
-                                <Text style={{ color: '#6BB0F5' }}>Sign up</Text>
+                            <Text style={styles.signupText}>Already have an account?</Text>
+                            <TouchableOpacity onPress={() => navigation.goBack()}>
+                                <Text style={{ color: '#6BB0F5' }}> Log In</Text>
                             </TouchableOpacity>
                         </View>
                     </>
@@ -123,6 +121,7 @@ const styles = StyleSheet.create({
 
     },
     button: (isValid) => ({
+        marginTop: 20,
         backgroundColor: isValid ? '#0096F6' : '#9ACAF7',
         alignItems: 'center',
         justifyContent: 'center',
