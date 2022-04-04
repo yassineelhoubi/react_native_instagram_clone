@@ -13,7 +13,10 @@ const LoginForm = ({ navigation }) => {
         <View style={styles.wrapper}>
             <Formik
                 initialValues={{ email: '', password: '' }}
-                onSubmit={(values) => console.log(values)}
+                onSubmit={(values) => {
+                    console.log(values)
+                    navigation.push("HomeScreen")
+                }}
                 validationSchema={LoginFormSchema}
                 validateOnMount={true}
             >
@@ -64,7 +67,9 @@ const LoginForm = ({ navigation }) => {
                         </View>
                         {touched.password && errors.password ? <Text style={{ color: "red", marginLeft: 5, marginBottom: 5 }}>{errors.password}</Text> : null}
                         <View style={{ alignItems: 'flex-end', marginBottom: 30 }}>
-                            <Text style={{ color: "#6BB0F5" }}>Forgot password?</Text>
+                            <TouchableOpacity>
+                                <Text style={{ color: "#6BB0F5" }}>Forgot password?</Text>
+                            </TouchableOpacity>
                         </View>
                         <Pressable
                             titleSize={20}

@@ -19,7 +19,7 @@ const SingedInStack = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='SignUpScreen'
+                initialRouteName='LoginScreen'
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen name='HomeScreen' component={HomeScreen} />

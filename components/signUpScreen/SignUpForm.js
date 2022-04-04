@@ -13,7 +13,10 @@ const SignUpForm = ({ navigation }) => {
         <View style={styles.wrapper}>
             <Formik
                 initialValues={{ email: '', userName: '', password: '' }}
-                onSubmit={(values) => console.log(values)}
+                onSubmit={(values) => {
+                    console.log(values)
+                    navigation.push("HomeScreen")
+                }}
                 validationSchema={LoginFormSchema}
                 validateOnMount={true}
             >
